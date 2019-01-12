@@ -4,4 +4,4 @@
 Table of Contents:
 
     Presentations:
-        [Concepts_Short.pdf](IBM-Cloud-Private/README.md)
+        1) Concepts_Short.pdf: A visual presentation of components within IBM Cloud Private.
