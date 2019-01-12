@@ -4,4 +4,6 @@
 Table of Contents:
 
     Presentations:
-        [Concepts - Short.pdf] (https://github.com/abalasu1/IBM-Cloud-Private/blob/master/Presentations/Concepts - Short.pdf): A short presentation with visual explanation of components within ICP.
+    
+        [Concepts - Short.pdf] (https://github.com/abalasu1/IBM-Cloud-Private/blob/master/Presentations/Concepts-Short.pdf):
+        A short presentation with visual explanation of components within ICP.
