@@ -4,3 +4,4 @@
 Table of Contents:
 
     Presentations:
+        [Concepts_Short.pdf](IBM-Cloud-Private/README.md)
