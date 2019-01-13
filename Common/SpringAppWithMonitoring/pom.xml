@@ -52,9 +52,9 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.13</version>
                 <configuration>
-    				<repository>${docker.image.prefix}/default</repository>
+    				<repository>${docker.image.prefix}</repository>
     				<serverId>${docker.image.prefix}</serverId>
-    				<registryUrl>https://${docker.image.prefix}</registryUrl>                
+    				<registryUrl>https://index.docker.io/v1</registryUrl>                
                     <dockerDirectory>${project.basedir}/docker</dockerDirectory>
                     <imageName>${docker.image.prefix}/${dockerimagename}</imageName>
                     <resources>
