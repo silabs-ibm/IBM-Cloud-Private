@@ -14,6 +14,10 @@
 
 [Java_Spring_http](Probes/Java_Spring_http): HTTP probes for a simple spring java applicaton using builtin actuator package.
 
+[Command_Probes](Probes/Command_Probes): Command based liveness & readiness probes.
+
 - Security:
 
 [Network_Policies](Security/Network_Policies): Secure microservices deployed on kubernetes using network policies.
+
+[Image_Policy](Security/Image_Policy): Image policy to restrict permissible registries to pull from, apply within a namespace.

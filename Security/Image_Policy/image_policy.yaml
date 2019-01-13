@@ -1,0 +1,16 @@
+apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
+kind: ImagePolicy
+metadata:
+  name: namespace-image-policy
+spec:
+  repositories:
+  # Docker hub
+    - name: "docker.io/*"
+      policy:
+        va:
+          enabled: false
+  # Google registry images
+    - name: "gcr.io/*"
+      policy:
+        va:
+          enabled: false  
