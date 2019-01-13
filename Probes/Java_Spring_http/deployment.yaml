@@ -21,13 +21,13 @@ spec:
     spec:
       containers:
       - name: k8swebapp
-        image: docker.io/abalasu1/springappmonitoring
+        image: arunimi/springappwithmonitoring:latest
         ports:
         - containerPort: 8080
           protocol: TCP
         readinessProbe:
           httpGet:
-            path: /info
+            path: /actuator/info
             port: 8080
           initialDelaySeconds: 10
           timeoutSeconds: 10
