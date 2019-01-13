@@ -1,14 +1,27 @@
 server:
   port: 8080
-  
+        
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-    enabled-by-default: true
-
+   
+  endpoint:
+    shutdown:
+      enabled: true
+      
   metrics:
     tags:
-      application: ${spring.application.name}
-      environment: ${spring.profiles}
+      application: SpringApp
+      environment: dev      
+      
+endpoints:
+  prometheus:
+    id: metrics 
+    
+info:
+  app:
+    name: Spring Demo app 
+    description: Spring Demo to show monitoring with prometheus and grafana
+    version: 1.0.0
