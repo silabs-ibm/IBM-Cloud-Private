@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: SpringAppWithMonitoring
-    
-  profiles: 
-    active: default 
