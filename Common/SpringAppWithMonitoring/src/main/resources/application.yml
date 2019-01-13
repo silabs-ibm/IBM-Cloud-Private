@@ -1,0 +1,21 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    enabled-by-default: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      profile: ${spring.profile.name}        
+   
+  endpoint:
+    shutdown:
+      enabled: true 
+    
+info:
+  app:
+    name: Spring Demo app 
+    description: Spring Demo to show monitoring with prometheus and grafana
+    version: 1.0.0
+    
