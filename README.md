@@ -3,5 +3,8 @@
 
 Table of Contents:
 
+    Common:
+        1) <a href="Common/SpringAppWithMonitoring">SpringAppWithMonitoring</a>: A simple spring application with built in actuator package and all management endpoints exposed.
+
     Presentations:
         1) Concepts_Short.pdf: A visual presentation of components within IBM Cloud Private.
