@@ -56,7 +56,7 @@
     				<serverId>${docker.image.prefix}</serverId>
     				<registryUrl>https://${docker.image.prefix}</registryUrl>                
                     <dockerDirectory>${project.basedir}/docker</dockerDirectory>
-                    <imageName>${docker.image.prefix}/default/${dockerimagename}</imageName>
+                    <imageName>${docker.image.prefix}/${dockerimagename}</imageName>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
