@@ -16,6 +16,10 @@
 
 [Command_Probes](Probes/Command_Probes): Command based liveness & readiness probes.
 
+[TCP_Probes](Probes/Tcp_Probes): TCP based liveness & readiness probes.
+
+[HTTP_Probes](Probes/Http_Probes): HTTP based liveness & readiness probes.
+
 - Security:
 
 [Network_Policies](Security/Network_Policies): Secure microservices deployed on kubernetes using network policies.
