@@ -10,7 +10,7 @@ spec:
         va:
           enabled: false
   # Google registry images
-    - name: "gcr.io/*"
+    - name: "k8s.gcr.io/*"
       policy:
         va:
           enabled: false  
