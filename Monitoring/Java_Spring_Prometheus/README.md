@@ -26,3 +26,17 @@ grafana marketplace.
 - Open the dashboard to see the metrics on the grafana dashboard.
 
 ![](https://user-images.githubusercontent.com/13202504/51103815-1efac000-180a-11e9-8ec8-fafecd9a968c.png)
+
+# Query metrics using prometheus running on ICP:
+
+- Assuming management services are enabled on ICP, prometheus should already be running. Check it using the following command: 
+kubectl get pods -n kube-system | grep prom
+monitoring-prometheus-75fb5ff6b6-jqwhv                            4/4     Running            8          12d
+
+- Execute "make initmonitor" to initiate port forwarding to prometheus pod on port 9090.
+
+- Browse to http://localhost:9090 to access the prometheus query tool.
+![](https://user-images.githubusercontent.com/13202504/51108120-1066d580-1817-11e9-9b27-dff42a19c7e8.png)
+
+- Query for any metrics exposed by the spring application.
+![](https://user-images.githubusercontent.com/13202504/51108160-39876600-1817-11e9-8ce7-d506e10f2e65.png)
