@@ -10,4 +10,5 @@
 
 - "make loadtest" to generate some load on the application.
 
-- Browse to "Platform|Monitoring" on the ICP console.
+- Browse to "Platform|Monitoring" on the ICP console. Import the java/micrometer dashboard from the
+grafana marketplace.
