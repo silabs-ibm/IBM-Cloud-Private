@@ -1,9 +1,7 @@
 NAMESPACE=learning
-PROJECT=k8swebapp
-
 FORTIO_POD=$(shell kubectl get pod -n $(NAMESPACE) -l app=fortio -o jsonpath='{.items[0].metadata.name}')
 
-init:
+inittest:
 	kubectl apply -f ./fortio.yaml -n $(NAMESPACE)
 	
 deploy:
