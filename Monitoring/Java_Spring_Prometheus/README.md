@@ -8,10 +8,13 @@
 
 - "make inittest" to deploy fortio container for load testing the application.
 
-- ![Browse to "Platform|Monitoring" on the ICP console. Import the java/micrometer dashboard from the
-grafana marketplace.](https://user-images.githubusercontent.com/13202504/51103212-ef4ab880-1807-11e9-8d00-fad95b8c528b.png)
+- Browse to "Platform|Monitoring" on the ICP console. Import the java/micrometer dashboard from the
+grafana marketplace.
 
-- ![Import java multimeter dashboard in grafana.](https://user-images.githubusercontent.com/13202504/51103499-ec9c9300-1808-11e9-8383-587746990c27.png)
+![](https://user-images.githubusercontent.com/13202504/51103212-ef4ab880-1807-11e9-8d00-fad95b8c528b.png)
+
+- Import java multimeter dashboard in grafana.
+![](https://user-images.githubusercontent.com/13202504/51103499-ec9c9300-1808-11e9-8383-587746990c27.png)
 
 - ![Use 3308 as the id for the dashboard to import.](https://user-images.githubusercontent.com/13202504/51103606-6e8cbc00-1809-11e9-8b47-8c3c10a4ef3a.png)
 
