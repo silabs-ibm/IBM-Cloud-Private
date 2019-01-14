@@ -20,6 +20,10 @@
 
 [HTTP_Probes](Probes/Http_Probes): HTTP based liveness & readiness probes.
 
+- Monitoring:
+
+[Java_Spring_Prometheus](Monitoring/Java_Spring_Prometheus): Spring app with prometheus metrics exposed and tracked through a grafana dashboard.
+
 - Security:
 
 [Network_Policies](Security/Network_Policies): Secure microservices deployed on kubernetes using network policies.
