@@ -33,3 +33,9 @@
 [Network_Policies](Security/Network_Policies): Secure microservices deployed on kubernetes using network policies.
 
 [Image_Policy](Security/Image_Policy): Image policy to restrict permissible registries to pull from, apply within a namespace.
+
+## Authors
+Arun Balasubramanyan
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
