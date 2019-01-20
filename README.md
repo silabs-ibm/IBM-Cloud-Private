@@ -6,6 +6,10 @@
 
 [SpringAppWithMonitoring](Common/SpringAppWithMonitoring): A simple spring application with built in actuator package and all management endpoints exposed.
 
+- Istio:
+
+[Calculator](Istio/Calculator): A simple microservices application with istio to demonstrate various features.
+
 - Presentations:
 
 [Concepts_Short.pdf](Presentations/Concepts_Short.pdf): A visual presentation of components within IBM Cloud Private.
