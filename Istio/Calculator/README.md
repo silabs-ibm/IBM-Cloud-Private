@@ -53,24 +53,37 @@ a) "make initts3" - Set up the traffic rules
 b) "make testts3" - two calls one with the header and another without to demonstrate redirection to traffic
 c) "make cleants3" - clean up the traffic rules
 
+4) Traffic mirroring - Mirror calls to a service
+a) "make initmirror" - Set up mirroring of calls to compositeop-v1 to compositeop-v2
+b) "make testmirror" - Execute test calls to show mirroring, use jaegar ui to see the calls mirrored
+c) "make cleanmirror" - clean up the mirror rules
+
 ## Testing microservices
-4) Introduce a fixed delay of 30s to v1 of compositeop servie
+1) Introduce a fixed delay of 30s to v1 of compositeop servie
 a) "make initfd" - Set up the fixed dealy
 b) "make testfd" - all calls take time to execute because of the 30s delay to the compositeop service
 c) "make cleanfd" - clean up the virtual service
 
-5) Combine fixed delay and request timeout to demonstrate timeouts for microservice through istio
+2) Combine fixed delay and request timeout to demonstrate timeouts for microservice through istio
 a) "make initrt" - Set up the fixed dealy & request timeouts
 b) "make testrt" - see calls to processor service timeout in 10s because of a fixed delay os 30s
 c) "make cleanrt" - clean up the virtual services
 
-6) Fault injection
+3) Fault injection
 a) "make initfi" - Set up the http faults with code 500 for all traffic to compositeop-v2
 b) "make testfi" - Some calls time out with the error
 c) "make cleanfi" - clean up the virtual services
 
+## Handling microservice failures
+1) Circuit Breaker - Set up a circuit breaker
+a) "make initcb" - Set up circuit breaker for compositeop service
+b) "make testreqcb" - Use fortio load testing tool to execute a single call, this should succeed
+c) "make testreqscb" - Use fortio to execute multiple calls concurrently and this should cause circuit breaker to be triggered
+d) "make infocb" - Query istio proxy to see the pending calls to verify circuit breaker trigger
+e) "make cleancb" - clean up the circuit breaker setup
+
 ## Monitoring
-7) Run "make monitor" on a separate command line to set up all monitoring services. This assumes all istio addons
+1) Run "make monitor" on a separate command line to set up all monitoring services. This assumes all istio addons
 are installed. 
 a) http://localhost:16686 - Jaeger UI to see the tracing
 b) http://localhost:7411 - Zipkin UI to see the traces
@@ -78,4 +91,16 @@ c) http://localhost:9090 - Prometheus UI to query istio metrics
 d) http://localhost:3000 - Grafana UI to see metric dashboards
 e) http://localhost:8088/force/forcegraph.html - Istio Service graph UI
 
-##
+## Security
+1) Network policies - Use network policies to secure services
+a) initnp - Initialize allowed traffic between microservices
+b) cleannp - clean up network policies
+
+2) Seucirty Policies - Work in Progress
+
+## Work in Progress
+Istio Multicluster, Rate limiting
+
+## Cleanup
+a) "make restart-all" - restart all pods within the calculator application
+b) "make clean" - Clean up the entire application, namespaces and all services, ingress inside
