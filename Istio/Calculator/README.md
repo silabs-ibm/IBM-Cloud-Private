@@ -15,7 +15,7 @@ Clone the project or download to your local file system
 4. python, node.js, ruby, go compilers are needed to compile locally
 
 ### Customization:
-1. Change PROJECT (namespace), DOCKERREPOSITORY(image registry address) and PROXYNODE to match your cluster
+1. Change PROJECT (namespac-, DOCKERREPOSITORY(image registry address) and PROXYNODE to match your cluster
 configuration
 
 ### Deployment
@@ -117,9 +117,9 @@ each one returning version=v1, v2 & v3 respectively. This is used to test traffi
 
 - "make testreqscb" - Use fortio to execute multiple calls concurrently and this should cause circuit breaker to be triggered
 
-d) "make infocb" - Query istio proxy to see the pending calls to verify circuit breaker trigger
+- "make infocb" - Query istio proxy to see the pending calls to verify circuit breaker trigger
 
-e) "make cleancb" - clean up the circuit breaker setup
+- "make cleancb" - clean up the circuit breaker setup
 
 ## Monitoring
 1) Run "make monitor" on a separate command line to set up all monitoring services. This assumes all istio addons
@@ -131,9 +131,9 @@ are installed.
 
 - http://localhost:9090 - Prometheus UI to query istio metrics
 
-d) http://localhost:3000 - Grafana UI to see metric dashboards
+- http://localhost:3000 - Grafana UI to see metric dashboards
 
-e) http://localhost:8088/force/forcegraph.html - Istio Service graph UI
+- http://localhost:8088/force/forcegraph.html - Istio Service graph UI
 
 ## Security
 1) Network policies - Use network policies to secure services
