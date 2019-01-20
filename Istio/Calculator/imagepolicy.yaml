@@ -1,0 +1,27 @@
+apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
+kind: ImagePolicy
+metadata:
+  name: calculator-namespace-image-policy
+  namespace:  <PROJECT>
+spec:
+  repositories:
+  # Docker hub Istio Container Registry
+    - name: "docker.io/istio/*"
+      policy:
+        va:
+          enabled: false
+  # Docker hub debug container image
+    - name: "docker.io/tutum/curl"
+      policy:
+        va:
+          enabled: false
+  # Docker hub redis image
+    - name: "docker.io/redis:alpine"
+      policy:
+        va:
+          enabled: false            
+  # ICP private registry images
+    - name: "pc310-1.icp:8500/calculator/*"
+      policy:
+        va:
+          enabled: false                             

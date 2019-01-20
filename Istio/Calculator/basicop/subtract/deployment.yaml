@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: subtract
+  namespace: <PROJECT>
+  labels:
+    app: subtract
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: subtract    
+  template:
+    metadata:
+      labels:
+        app: subtract         
+    spec:
+      containers:
+      - image: <CONTAINER>
+        name: subtract-container
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+          name: http-server
+      imagePullSecrets:
+      - name: bluemix-calculator-secret           

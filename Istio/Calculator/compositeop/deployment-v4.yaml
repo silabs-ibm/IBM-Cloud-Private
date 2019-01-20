@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: compositeop-v4
+  namespace: <PROJECT>
+  labels:
+    app: compositeop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: compositeop       
+  template:
+    metadata:
+      labels:
+        app: compositeop
+        version: v4      
+    spec:
+      containers:
+      - image: <CONTAINER>
+        name: compositeop-container
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+          name: http-server
+        env:
+        - name: VERSION
+          value: "v4"
+        - name: ADDURI
+          value: "http://add/basicop/add"
+        - name: SUBURI
+          value: "http://subtract/basicop/subtract"
+        - name: MULURI
+          value: "http://multiply/basicop/multiply"
+        - name: DIVURI
+          value: "http://divide/basicop/divide"
+      imagePullSecrets:
+      - name: bluemix-calculator-secret          

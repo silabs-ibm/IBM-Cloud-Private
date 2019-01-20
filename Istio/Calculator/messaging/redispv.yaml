@@ -1,0 +1,33 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: redispv
+  namespace: <PROJECT>
+  labels:
+    app: redis    
+spec:
+  capacity:
+    storage: 100Mi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  local:
+    path: "/data/calculator/redis"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  namespace: <PROJECT>
+  name: redispvc
+  labels:
+    app: redis  
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+  volumeName: redispv
+  selector:
+    matchLabels:
+      app: redis

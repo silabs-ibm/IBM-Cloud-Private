@@ -1,0 +1,106 @@
+apiVersion: "config.istio.io/v1alpha2"
+kind: listchecker
+metadata:
+  name: basicopwhitelist
+  namespace: calculator
+spec:
+  overrides: ["compositeop", "istio-ingressgateway"]
+  blacklist: false
+---
+apiVersion: "config.istio.io/v1alpha2"
+kind: listentry
+metadata:
+  name: applabelsource
+  namespace: calculator  
+spec:
+  value: source.labels["app"]
+---
+apiVersion: "config.istio.io/v1alpha2"
+kind: rule
+metadata:
+  name: addwhitelistrule
+  namespace: calculator  
+spec:
+  match: destination.labels["app"] == "add"
+  actions:
+  - handler: basicopwhitelist.listchecker
+    instances:
+    - applabelsource.listentry
+---
+apiVersion: "config.istio.io/v1alpha2"
+kind: rule
+metadata:
+  name: subtractwhitelistrule
+  namespace: calculator  
+spec:
+  match: destination.labels["app"] == "subtract"
+  actions:
+  - handler: basicopwhitelist.listchecker
+    instances:
+    - applabelsource.listentry
+---
+apiVersion: "config.istio.io/v1alpha2"
+kind: rule
+metadata:
+  name: multiplywhitelistrule
+  namespace: calculator  
+spec:
+  match: destination.labels["app"] == "multiply"
+  actions:
+  - handler: basicopwhitelist.listchecker
+    instances:
+    - applabelsource.listentry
+---
+apiVersion: "config.istio.io/v1alpha2"
+kind: rule
+metadata:
+  name: dividewhitelistrule
+  namespace: calculator  
+spec:
+  match: destination.labels["app"] == "divide"
+  actions:
+  - handler: basicopwhitelist.listchecker
+    instances:
+    - applabelsource.listentry
+---
+apiVersion: "config.istio.io/v1alpha2"
+kind: listchecker
+metadata:
+  name: compositeopwhitelist
+  namespace: calculator  
+spec:
+  overrides: ["processor", "istio-ingressgateway"]
+  blacklist: false
+---
+apiVersion: "config.istio.io/v1alpha2"
+kind: rule
+metadata:
+  name: compositeopwhitelistrule
+  namespace: calculator  
+spec:
+  match: destination.labels["app"] == "compositeop"
+  actions:
+  - handler: compositeopwhitelist.listchecker
+    instances:
+    - applabelsource.listentry
+---
+apiVersion: "config.istio.io/v1alpha2"
+kind: listchecker
+metadata:
+  name: frontendwhitelist
+  namespace: calculator  
+spec:
+  overrides: ["istio-ingressgateway"]
+  blacklist: false
+---
+apiVersion: "config.istio.io/v1alpha2"
+kind: rule
+metadata:
+  name: processorwhitelistrule
+  namespace: calculator  
+spec:
+  match: destination.labels["app"] == "processor"
+  actions:
+  - handler: frontendwhitelist.listchecker
+    instances:
+    - applabelsource.listentry 

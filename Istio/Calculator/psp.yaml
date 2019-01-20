@@ -1,0 +1,45 @@
+apiVersion: extensions/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: psp-istio
+spec:
+  privileged: true
+  allowedCapabilities:
+  - 'NET_ADMIN'
+  fsGroup:
+    rule: RunAsAny
+  runAsUser:
+    rule: RunAsAny
+  seLinux:
+    rule: RunAsAny
+  supplementalGroups:
+    rule: RunAsAny
+  volumes:
+  - '*'
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  name: psp-istiocr
+rules:
+- apiGroups:
+  - extensions
+  resourceNames:
+  - psp-istio
+  resources:
+  - podsecuritypolicies
+  verbs:
+  - use
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: psp-istiocrb
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: psp-istiocr
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: <PROJECT>
