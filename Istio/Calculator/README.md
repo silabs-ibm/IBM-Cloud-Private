@@ -103,4 +103,5 @@ Istio Multicluster, Rate limiting
 
 ## Cleanup
 a) "make restart-all" - restart all pods within the calculator application
+
 b) "make clean" - Clean up the entire application, namespaces and all services, ingress inside
