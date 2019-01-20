@@ -51,7 +51,7 @@ each one returning version=v1, v2 & v3 respectively. This is used to test traffi
 2) Individual services can be tested easily with "make test-add",  "make test-subtract", "make test-multiply", "make test-divide" & "make test-compositeop"
 
 ## Traffic shaping
-3) Direct all traffic to v1 of the compositeop service.
+1) Direct all traffic to v1 of the compositeop service.
 
 a) "make initts1" - Set up the traffic rules
 
@@ -59,7 +59,7 @@ b) "make testts1" - 80% of the traffic goes to v1, 10% to v2 & 10% to v3
 
 c) "make cleants1" - clean up the traffic rules
 
-3) Direct all traffic to v3 of the compositeop service. 
+2) Direct all traffic to v3 of the compositeop service. 
 
 a) "make initts2" - Set up the traffic rules
 
