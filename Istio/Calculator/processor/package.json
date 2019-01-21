@@ -10,14 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "4.13.x",
-    "cors": "*",
-    "body-parser": "*",
-    "request": "*",
-    "underscore": "*",
     "async": "*",
-    "redis": "*",
+    "body-parser": "*",
     "chance": "*",
-    "jsep": "*"
+    "cors": "*",
+    "express": "4.13.x",
+    "fresh": "^0.5.2",
+    "jsep": "*",
+    "redis": "*",
+    "request": "*",
+    "underscore": "*"
   }
 }
