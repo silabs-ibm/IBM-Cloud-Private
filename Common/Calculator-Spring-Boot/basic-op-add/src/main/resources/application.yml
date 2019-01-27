@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: basic-op-add
+  sleuth:
+    traceId128: true
+    sampler:
+      probability: 1.0    
+
+server:
+  port: 8001
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      environment: prod
+      
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8101/eureka}      

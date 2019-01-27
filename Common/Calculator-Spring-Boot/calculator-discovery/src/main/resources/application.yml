@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: composite-op
+  sleuth:
+    traceId128: true
+    sampler:
+      probability: 1.0    
+
+server:
+  port: 8101
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      environment: prod
+      
+eureka: 
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8101}      
