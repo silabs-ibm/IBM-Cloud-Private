@@ -93,14 +93,20 @@
                         <phase>package</phase>
                         <goals>
                             <goal>build</goal>
-                        </goals>
-            			<configuration>
-              				<dockerHost>tcp://docker.host:5555</dockerHost>
-              				<imageName>docker.registry/image:withtag</imageName>
-            			</configuration>                        
+                        </goals>                       
                     </execution>
+    				<execution>
+      					<id>push-image</id>
+      					<phase>deploy</phase>
+      					<goals>
+        					<goal>push</goal>
+      					</goals>
+      					<configuration>
+        					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+      					</configuration>
+    				</execution>                    
                 </executions>
-            </plugin>  			
+            </plugin>             			
 		</plugins>
 	</build>
 

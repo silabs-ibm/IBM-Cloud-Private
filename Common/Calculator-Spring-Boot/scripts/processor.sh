@@ -7,5 +7,5 @@ while sleep 0.1;
       "x4": "4 / 2",
       "x5": "1 %2B 2 %2B 3 %2B 4 %2B 33 - 6 - 7 * 3 %2B 12 / 4",
       "x6": "12 / 4 / 3"
-    }' | jq '.[]  | "identifier=\(.identifier) expr=\(.expr) result=\(.output.value) "'
+    }' | jq '.[]  | "identifier=\(.identifier) expr=\(.output.expr) result=\(.output.value) "'
   done ;

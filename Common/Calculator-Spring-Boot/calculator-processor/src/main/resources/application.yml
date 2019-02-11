@@ -6,7 +6,9 @@ spring:
   sleuth:
     traceId128: true
     sampler:
-      probability: 1.0      
+      probability: 1.0
+  zipkin:
+    baseUrl: http://zipkin.calcspringboot:9411/          
     
 server:
   port: 8006
@@ -24,19 +26,6 @@ management:
 ---
 spring:
   profiles: development
-  cloud:
-    stream:
-      kafka:
-        binder:
-          brokers:
-          - localhost:9092
-      bindings:
-          processor-in:
-            destination: expressionset
-            contentType: application/json
-          processor-out:
-            destination: expressionset
-            contentType: application/json
                      
 eureka:
   client:
@@ -47,22 +36,10 @@ eureka:
 ---
 spring:
   profiles: docker
-  cloud:
-    stream:
-      kafka:
-        binder:
-          brokers:
-          - kafka:9092
-      bindings:
-          processor-in:
-            destination: expressionset
-            contentType: application/json
-          processor-out:
-            destination: expressionset
-            contentType: application/json  
+
 eureka:
   client:
     registerWithEureka: true
     fetchRegistry: true
     service-url:
-      defaultZone: ${EUREKA_URI:http://discovery:8101/eureka}  
+      defaultZone: ${EUREKA_URI:http://calculator-discovery:8101/eureka}       

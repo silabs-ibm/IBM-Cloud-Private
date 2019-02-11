@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.calculator</groupId>
 	<artifactId>basic-op-multiply</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>basic-op-multiply</name>
 	<description>Calculator Multiply Service</description>
 
@@ -59,7 +59,6 @@
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>		
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -71,8 +70,12 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.13</version>
                 <configuration>
-                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <serverId>docker.io</serverId>                
+                    <imageName>${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>
                     <dockerDirectory>${project.basedir}/docker</dockerDirectory>
+            		<buildArgs>
+                		<JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+            		</buildArgs>                    
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
@@ -93,7 +96,6 @@
             </plugin>			
 		</plugins>
 	</build>
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

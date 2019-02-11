@@ -1,25 +1,19 @@
-ADDPROXY=http://localhost:8001
-SUBTRACTPROXY=http://localhost:8002
-MULTIPLYPROXY=http://localhost:8003
-DIVIDEPROXY=http://localhost:8004
-
-COMPOSITEOPPROXY=http://localhost:8005
-PROCESSORPROXY=http://localhost:8006
+PROXY=http://calcspringboot.io
 
 test-add:
-	-bash -c './add.sh $(ADDPROXY)'	
+	-bash -c './add.sh $(PROXY)'	
 
 test-subtract:
-	-bash -c './subtract.sh $(SUBTRACTPROXY)'
+	-bash -c './subtract.sh $(PROXY)'
 
 test-multiply:
-	-bash -c './multiply.sh $(MULTIPLYPROXY)'	
+	-bash -c './multiply.sh $(PROXY)'	
 
 test-divide:
-	-bash -c './divide.sh $(DIVIDEPROXY)'
+	-bash -c './divide.sh $(PROXY)'
 
 test-compositeop:
-	-bash -c './compositeop.sh $(COMPOSITEOPPROXY)'
+	-bash -c './compositeop.sh $(PROXY)'
 
 test-processor:
-	-bash -c './processor.sh $(PROCESSORPROXY)'	
+	-bash -c './processor.sh $(PROXY)'	

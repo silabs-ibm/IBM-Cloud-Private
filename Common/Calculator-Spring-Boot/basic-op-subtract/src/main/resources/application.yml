@@ -7,7 +7,9 @@ spring:
     traceId128: true
     sampler:
       probability: 1.0 
-
+  zipkin:
+    baseUrl: http://zipkin.calcspringboot:9411/
+    
 server:
   port: 8002
   
@@ -38,4 +40,4 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     service-url:
-      defaultZone: ${EUREKA_URI:http://discovery:8101/eureka}
+      defaultZone: ${EUREKA_URI:http://calculator-discovery:8101/eureka}       

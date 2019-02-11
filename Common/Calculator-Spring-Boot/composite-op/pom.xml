@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.calculator</groupId>
 	<artifactId>composite-op</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>composite-op</name>
 	<description>Calculator Composite Op Service</description>
 
@@ -20,7 +20,6 @@
 	    <docker.plugin.version>1.4.9</docker.plugin.version>
         <docker.image.prefix>arunimi</docker.image.prefix>		
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -64,7 +63,6 @@
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
 	</dependencies>
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -76,7 +74,6 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -88,8 +85,12 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.13</version>
                 <configuration>
-                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <serverId>docker.io</serverId>                
+                    <imageName>${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>
                     <dockerDirectory>${project.basedir}/docker</dockerDirectory>
+            		<buildArgs>
+                		<JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+            		</buildArgs>                    
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
@@ -111,7 +112,6 @@
 			
 		</plugins>
 	</build>
-
 	<repositories>
 		<repository>
 			<id>spring-milestones</id>
@@ -119,5 +119,4 @@
 			<url>https://repo.spring.io/milestone</url>
 		</repository>
 	</repositories>
-
 </project>
