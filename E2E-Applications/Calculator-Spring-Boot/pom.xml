@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.abalsu1</groupId>
+    <artifactId>calculator-spring-boot</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>calculator</name>
+    <description>calculator parent project</description>
+    
+    <modules>
+        <module>calculator-discovery</module>
+        <module>basic-op-add</module>
+        <module>basic-op-subtract</module>
+        <module>basic-op-multiply</module>
+        <module>basic-op-divide</module>
+        <module>composite-op</module> 
+        <module>calculator-processor</module>                                        
+    </modules>
+</project>

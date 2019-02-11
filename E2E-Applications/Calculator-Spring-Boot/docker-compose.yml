@@ -1,0 +1,61 @@
+version: '3'
+services:
+  discovery:
+    image: arunimi/calculator-discovery
+    ports:
+      - 8101:8101  
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - 9411:9411       
+  add:
+    image: arunimi/basic-op-add
+    ports:
+      - 8001:8001
+    links:
+      - "discovery"
+      - "zipkin"
+  subtract:
+    image: arunimi/basic-op-subtract
+    ports:
+      - 8002:8002
+    links:
+      - "discovery"
+      - "zipkin" 
+  multiply:
+    image: arunimi/basic-op-multiply
+    ports:
+      - 8003:8003
+    links:
+      - "discovery"
+      - "zipkin" 
+  divide:
+    image: arunimi/basic-op-divide
+    ports:
+      - 8004:8004
+    links:
+      - "discovery"
+      - "zipkin"
+  composite-op:
+    image: arunimi/composite-op
+    ports:
+      - 8005:8005
+    links:
+      - "discovery"
+      - "zipkin" 
+      - "add"
+      - "subtract"
+      - "multiply"
+      - "divide"
+  processor:
+    image: arunimi/calculator-processor
+    ports:
+      - 8006:8006
+    links:
+      - "discovery"
+      - "zipkin" 
+      - "add"
+      - "subtract"
+      - "multiply"
+      - "divide"
+      - "composite-op"           

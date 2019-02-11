@@ -1,0 +1,42 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: processor
+  namespace: calcspringboot
+  labels:
+    app: processor
+spec:
+  replicas: 1
+  strategy: 
+    type: Recreate  
+  template:
+    metadata:
+      labels:
+        app: processor
+    spec:
+      containers:
+      - image: arunimi/calculator-processor:1.0.0
+        name: divide
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8006
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: "docker"         
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: processor
+  namespace: calcspringboot
+  labels:
+    app: processor
+spec:
+  type: ClusterIP
+  ports:
+  - name: "8006"
+    port: 8006
+    targetPort: 8006
+  selector:
+    app: processor
