@@ -22,7 +22,14 @@ spec:
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: "docker"
-      restartPolicy: Always
+        resources:
+          limits:
+            cpu: 200m
+            memory: 200Mi
+          requests:
+            cpu: 50m
+            memory: 50Mi          
+      restartPolicy: Always         
 ---
 apiVersion: v1
 kind: Service

@@ -23,7 +23,6 @@ spec:
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: "docker"
-        restartPolicy: Always
         readinessProbe:
           httpGet:
             path: /actuator
@@ -36,12 +35,9 @@ spec:
             port: 8001
           initialDelaySeconds: 60
           timeoutSeconds: 10          
-        resources:
-          limits:
-            cpu: 200m
-            memory: 100Mi
+        resources:         
           requests:
-            cpu: 50m
+            cpu: 20m
             memory: 50Mi      
 ---
 apiVersion: v1

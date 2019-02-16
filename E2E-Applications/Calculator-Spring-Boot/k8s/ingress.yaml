@@ -10,7 +10,7 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: calculator-discovery
+          serviceName: discovery
           servicePort: 8101
       - path: /zipkin
         backend:
