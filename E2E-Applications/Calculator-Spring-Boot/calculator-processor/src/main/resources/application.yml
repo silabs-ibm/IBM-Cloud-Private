@@ -8,7 +8,7 @@ spring:
     sampler:
       probability: 1.0
   zipkin:
-    baseUrl: http://zipkin.calcspringboot:9411/          
+    baseUrl: http://zipkin:9411/          
     
 server:
   port: 8006
