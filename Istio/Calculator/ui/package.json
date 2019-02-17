@@ -23,16 +23,19 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
+    "@ibm/plex": "*",
     "@types/chance": "^0.7.35",
     "@types/redis": "^2.8.3",
     "chance": "^1.0.12",
     "core-js": "^2.4.1",
+    "lodash": "^4.17.11",
+    "randomatic": "^3.1.1",
     "redis": "^2.8.0",
     "redis-commands": "^1.3.1",
     "rxjs": "^5.5.2",
     "then-redis": "^2.0.1",
-    "zone.js": "^0.8.14",
-    "@ibm/plex": "*"
+    "webpack-dev-server": "^3.1.14",
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
     "@angular/cli": "1.6.2",
