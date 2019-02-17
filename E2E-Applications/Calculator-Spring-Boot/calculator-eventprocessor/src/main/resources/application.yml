@@ -1,0 +1,53 @@
+spring:
+  profiles:
+    active: development
+  application:
+    name: event-processor
+  sleuth:
+    traceId128: true
+    sampler:
+      probability: 1.0
+  zipkin:
+    baseUrl: http://zipkin.calcspringboot:9411/
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers:
+          - localhost:9092
+        bindings:
+          calculator-in:
+            destination: expressionset
+            contentType: 'application/json'
+          calculator-out:
+            destination: hashmap
+            contentType: application/json
+          compositeop-in:
+            destination: expressionpair
+            contentType: 'application/json'
+          compositeop-out:
+            destination: hashmap
+            contentType: application/json                                 
+    
+server:
+  port: 8007       
+---
+spring:
+  profiles: development
+                     
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8101/eureka}
+---
+spring:
+  profiles: docker
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: ${EUREKA_URI:http://discovery:8101/eureka}       
