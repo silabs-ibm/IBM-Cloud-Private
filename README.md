@@ -28,6 +28,10 @@
 
 [Java_Spring_Prometheus](Monitoring/Java_Spring_Prometheus): Spring app with prometheus metrics exposed and tracked through a grafana dashboard.
 
+- Services:
+
+[Headless](Services/Headless): Headless Service with selectors and no selectors.
+
 - Security:
 
 [Network_Policies](Security/Network_Policies): Secure microservices deployed on kubernetes using network policies.
