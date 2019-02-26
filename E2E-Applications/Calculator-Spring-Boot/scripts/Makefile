@@ -17,3 +17,9 @@ test-compositeop:
 
 test-processor:
 	-bash -c './processor.sh $(PROXY)'	
+
+test-mtprocessor:
+	-bash -c './mtprocessor.sh $(PROXY)'
+
+test-eventprocessor:
+	-bash -c './eventprocessor.sh $(PROXY)'	

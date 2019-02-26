@@ -7,15 +7,16 @@ public class ExpressionPair  implements Serializable {
 	
     private String identifier;
     private String expression;
-    
-    public ExpressionPair() {
+    private String uuid;
+
+	public ExpressionPair() {
     }
     
-	public ExpressionPair(String identifier, String expression) {
+    public ExpressionPair(String identifier, String expression, String uuid) {
 		super();
-		
 		this.identifier = identifier;
 		this.expression = expression;
+		this.uuid = uuid;
 	}
 
 	public String getIdentifier() {
@@ -34,8 +35,16 @@ public class ExpressionPair  implements Serializable {
 		this.expression = expression;
 	}
 
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
+
 	@Override
 	public String toString() {
-		return "ExpressionPair [identifier=" + identifier + ", expression=" + expression + "]";
+		return "ExpressionPair [identifier=" + identifier + ", expression=" + expression + ", uuid=" + uuid + "]";
 	}
 }

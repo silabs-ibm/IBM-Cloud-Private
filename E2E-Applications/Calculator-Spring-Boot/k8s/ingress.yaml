@@ -59,4 +59,12 @@ spec:
       - path: /processor/mtcalculate
         backend:
           serviceName: processor
-          servicePort: 8006  
+          servicePort: 8006
+      - path: /eventprocessor/submit
+        backend:
+          serviceName: eventprocessor
+          servicePort: 8007     
+      - path: /eventprocessor/result
+        backend:
+          serviceName: eventprocessor
+          servicePort: 8007               

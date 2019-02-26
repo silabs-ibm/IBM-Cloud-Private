@@ -47,6 +47,9 @@ metadata:
   namespace: calcspringboot
   labels:
     app: basic-op-add
+  annotations:
+    prometheus.io/scrape: 'true' 
+    prometheus.io/path: '/actuator/prometheus'     
 spec:
   type: ClusterIP
   ports:

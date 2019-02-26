@@ -14,6 +14,7 @@
         <module>basic-op-multiply</module>
         <module>basic-op-divide</module>
         <module>composite-op</module> 
-        <module>calculator-processor</module>                                        
+        <module>calculator-processor</module>
+        <module>calculator-eventprocessor</module>                                                
     </modules>
 </project>

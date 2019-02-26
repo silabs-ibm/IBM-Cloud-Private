@@ -22,7 +22,23 @@ spec:
         - containerPort: 8005
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: "docker"        
+          value: "docker"
+        readinessProbe:
+          httpGet:
+            path: /actuator
+            port: 8005
+          initialDelaySeconds: 10
+          timeoutSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8005
+          initialDelaySeconds: 60
+          timeoutSeconds: 10          
+        resources:
+          requests:
+            cpu: 20m
+            memory: 50Mi               
       restartPolicy: Always
 ---
 apiVersion: v1
@@ -32,6 +48,9 @@ metadata:
   namespace: calcspringboot
   labels:
     app: composite-op
+  annotations:
+    prometheus.io/scrape: 'true' 
+    prometheus.io/path: '/actuator/prometheus'     
 spec:
   type: ClusterIP
   ports:
