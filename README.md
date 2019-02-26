@@ -6,6 +6,10 @@
 
 [SpringAppWithMonitoring](Common/SpringAppWithMonitoring): A simple spring application with built in actuator package and all management endpoints exposed.
 
+- E2E-Applications:
+
+[Calculator-Spring-Boot](E2E-Applications/Calculator-Spring-Boot): A spring boot implementation of the calculator application, with discovery through eureka, tracing and monitoring support, microservices with kafka
+
 - Istio:
 
 [Calculator](Istio/Calculator): A simple microservices application with istio to demonstrate various features.
