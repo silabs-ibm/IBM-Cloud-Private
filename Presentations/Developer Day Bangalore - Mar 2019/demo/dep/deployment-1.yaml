@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-server
+  namespace: demo-dep
+spec:
+  selector:
+    matchLabels:
+      app: web-app
+  replicas: 3
+  strategy: 
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/node-function
+                operator: In
+                values:
+                - web               
+      containers:
+      - name: web-app
+        image: nginx:1.12-alpine
+        securityContext:
+          runAsUser: 999
+          capabilities:
+            add:
+              - all

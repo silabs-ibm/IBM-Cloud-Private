@@ -1,0 +1,19 @@
+kubectl explain crd
+kubectl -v get nodes
+
+kubectl get nodes -o json | jq -r '[.items[] | {name:.metadata.name, id:.spec.externalID, unschedulable:.spec.unschedulable}]'
+kubectl get nodes -o json | jq -r '[.items[] | {name:.metadata.name}]'
+
+kubectl proxy --port 8080
+http://localhost:8080/api/v1/namespaces/default/services/wishful-ibex-ibmcloud-iks-debug:8822/proxy/page
+
+http://kube-ops-view.example.org
+
+cd "/Users/admin/Documents/ISL/Sessions/Conducted Sessions/2019/2019-03-14/demo/dep"
+
+https://9.20.194.93:8443 - eu
+https://9.30.123.128:8443 - us
+
+https://52.116.26.156:8443 - ibm cloud
+
+skydive: http://9.30.123.128:31143/topology
