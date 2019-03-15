@@ -17,6 +17,7 @@
 - Presentations:
 
 [Concepts_Short.pdf](Presentations/Concepts_Short.pdf): A visual presentation of components within IBM Cloud Private.
+
 [IDD_Cloud_Track_Session4_Arun.pptx](Presentations/Developer_Day_Bangalore-Mar_2019/IDD_Cloud_Track_Session4_Arun.pptx): Developer day presentation on kubernetes.
 
 - Probes:
