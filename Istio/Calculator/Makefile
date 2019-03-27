@@ -1,8 +1,8 @@
 PROJECT=calculator
-DOCKERREPOSITORY=pc310-1.icp:8500
-DOCKERREPOSITORYREMOTE=pc310-1.icp:8500
+DOCKERREPOSITORY=uscluster.icp:8500
+DOCKERREPOSITORYREMOTE=eucluster.icp:8500
 
-PROXYNODE=9.30.183.101
+PROXYNODE=9.30.123.128
 PROXY=http://$(PROXYNODE):$(shell kubectl get svc istio-ingressgateway -n istio-system -o json | jq .spec.ports[0].nodePort)
 UIPROXY=http://$(PROXYNODE):$(shell kubectl get svc istio-ingressgateway -n istio-system -o json | jq .spec.ports[0].nodePort)
 
@@ -22,7 +22,7 @@ DEBUG_POD=$(shell kubectl get pod -n $(PROJECT) -l app=curl -o jsonpath='{.items
 init:
 	-bash -c 'kubectl create ns $(PROJECT)'	
 	-bash -c 'kubectl label namespace $(PROJECT) istio-injection=enabled'
-	-sed -e 's~<PROJECT>~$(PROJECT)~g' ./imagepolicy.yaml | kubectl apply -f -	
+	-sed -e 's~<PROJECT>~$(PROJECT)~g' -e 's~<DOCKERREPOSITORY>~$(DOCKERREPOSITORY)~g' ./imagepolicy.yaml | kubectl apply -f -	
 	-sed -e 's~<PROJECT>~$(PROJECT)~g' ./debug.yaml | kubectl apply -f -	
 	-sed -e 's~<PROJECT>~$(PROJECT)~g' ./messaging/redis.yaml | kubectl apply -f -	
 	-sed -e 's~<PROJECT>~$(PROJECT)~g' ./psp.yaml | kubectl apply -f -
@@ -299,7 +299,7 @@ testreqcb:
 	-bash -c 'kubectl exec -it $(FORTIO_POD) -n $(PROJECT) -c fortio fortio -- load -curl "http://compositeop/compositeop/eval?expr=5%2B6%2B3%2B4%2B5%2B2%2B3%2B3%2B4%2B2%2B2%2B2%2B2%2B2%2B2-2"'
 
 testreqscb:
-	-bash -c 'kubectl exec -it $(FORTIO_POD) -n $(PROJECT) -c fortio fortio -- load -c 20 -qps 100 -n 1000 -loglevel Warning "http://compositeop/compositeop/eval?expr=5%2B6%2B3%2B4%2B5%2B2%2B3%2B3%2B4%2B2%2B2%2B2%2B2%2B2%2B2%2B2"'
+	-bash -c 'kubectl exec -it $(FORTIO_POD) -n $(PROJECT) -c fortio fortio -- load -c 200 -qps 100 -n 1000 -loglevel Warning "http://compositeop/compositeop/eval?expr=5%2B6%2B3%2B4%2B5%2B2%2B3%2B3%2B4%2B2%2B2%2B2%2B2%2B2%2B2%2B2%2B5%2B6%2B3%2B4%2B5%2B2%2B3%2B3%2B4%2B2%2B2%2B2%2B2%2B2%2B2%2B2"'
 	-bash -c 'kubectl exec -it $(FORTIO_POD) -n $(PROJECT) -c istio-proxy -- sh -c "curl localhost:15000/stats" | grep compositeop | grep pending'
 
 infocb:
@@ -355,6 +355,15 @@ PROMETHEUS_POD_NAME=$(shell kubectl -n istio-system get pod -l app=prometheus -o
 
 monitor:
 	$(shell kubectl -n istio-system port-forward $(JAEGER_POD_NAME) 16686:16686 & kubectl -n istio-system port-forward $(ZIPKIN_POD_NAME) 7411:7411 & kubectl -n istio-system port-forward $(SERVICEGRAPH_POD_NAME) 8088:8088 & kubectl -n istio-system port-forward $(GRAFANA_POD_NAME) 3000:3000 & kubectl -n istio-system port-forward $(PROMETHEUS_POD_NAME) 9090:9090)
+
+JAEGER_POD_NAME=$(shell kubectl get pod -n istio-system -l app=jaeger -o jsonpath='{.items[0].metadata.name}')
+KIALI_POD_NAME=$(shell kubectl -n istio-system get pod -l app=kiali -o jsonpath='{.items[0].metadata.name}')
+GRAFANA_POD_NAME=$(shell kubectl -n istio-system get pod -l app=grafana -o jsonpath='{.items[0].metadata.name}')
+PROMETHEUS_POD_NAME=$(shell kubectl -n istio-system get pod -l app=prometheus -o jsonpath='{.items[0].metadata.name}')
+
+monitor-new:
+	$(shell kubectl -n istio-system port-forward $(JAEGER_POD_NAME) 16686:16686 & kubectl -n istio-system port-forward $(KIALI_POD_NAME) 20001:20001 & kubectl -n istio-system port-forward $(GRAFANA_POD_NAME) 3000:3000 & kubectl -n istio-system port-forward $(PROMETHEUS_POD_NAME) 9090:9090)
+
 
 UI_POD_NAME=$(shell kubectl -n $(PROJECT) get pod -l app=ui -o jsonpath='{.items[0].metadata.name}') 
 

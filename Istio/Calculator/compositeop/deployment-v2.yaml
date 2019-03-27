@@ -35,4 +35,4 @@ spec:
         - name: DIVURI
           value: "http://divide/basicop/divide"
       imagePullSecrets:
-      - name: bluemix-calculator-secret           
+      - name: private-registry           

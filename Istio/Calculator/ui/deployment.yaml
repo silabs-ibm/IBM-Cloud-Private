@@ -31,4 +31,4 @@ spec:
         - containerPort: 80
           name: http-server
       imagePullSecrets:
-      - name: bluemix-calculator-secret                              
+      - name: private-registry                             

@@ -28,4 +28,4 @@ spec:
         - name: REDISURI
           value: redis://redis:6379/0
       imagePullSecrets:
-      - name: bluemix-calculator-secret           
+      - name: private-registry           

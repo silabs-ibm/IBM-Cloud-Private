@@ -21,7 +21,7 @@ spec:
         va:
           enabled: false            
   # ICP private registry images
-    - name: "pc310-1.icp:8500/calculator/*"
+    - name: "<DOCKERREPOSITORY>/calculator/*"
       policy:
         va:
           enabled: false                             
