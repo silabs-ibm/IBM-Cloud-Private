@@ -2,6 +2,7 @@ apiVersion: mcm.ibm.com/v1alpha1
 kind: Deployable
 metadata:
   name: nginx
+  namespace: mcm-nginx
   labels:
     app: nginx
 spec:
