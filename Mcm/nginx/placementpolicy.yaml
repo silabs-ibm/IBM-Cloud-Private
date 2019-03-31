@@ -9,6 +9,7 @@ spec:
   clusterReplicas: 1
   clusterSelector:
     matchLabels:
+      datacenter: Hursley
       region: EU
   resourceHint:
     type: cpu

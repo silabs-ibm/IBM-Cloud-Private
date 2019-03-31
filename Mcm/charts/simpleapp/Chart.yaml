@@ -1,4 +1,4 @@
 apiVersion: v1
-description: A simple calculator application
-name: calculator
+description: A simple microservices application
+name: simpleapp
 version: 0.1.0
