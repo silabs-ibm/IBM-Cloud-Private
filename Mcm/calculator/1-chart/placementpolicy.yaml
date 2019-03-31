@@ -1,0 +1,14 @@
+apiVersion: mcm.ibm.com/v1alpha1
+kind: PlacementPolicy
+metadata:
+  name: calculator
+  namespace: mcm-calculator
+  labels:
+    app: calculator
+spec:
+  clusterReplicas: 1
+  clusterSelector:
+    matchLabels:
+      region: EU
+  resourceHint:
+    type: cpu

@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A simple calculator application
+name: calculator
+version: 0.1.0

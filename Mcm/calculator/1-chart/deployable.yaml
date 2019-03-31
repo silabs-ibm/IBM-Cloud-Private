@@ -1,0 +1,13 @@
+apiVersion: mcm.ibm.com/v1alpha1
+kind: Deployable
+metadata:
+  name: calculator
+  namespace: mcm-calculator
+  labels:
+    app: calculator
+spec:
+  deployer:
+    kind: calculator
+    helm:
+      chartURL: https://github.com/IBM/charts/raw/master/repo/stable/ibm-nginx-dev-1.0.1.tgz
+      namespace: mcm-calculator

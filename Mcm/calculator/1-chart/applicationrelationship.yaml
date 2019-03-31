@@ -1,0 +1,15 @@
+apiVersion: mcm.ibm.com/v1alpha1
+kind: ApplicationRelationship
+metadata:
+  name: calculator
+  namespace: mcm-calculator
+  labels:
+    app: calculator
+spec:
+  type: contains
+  source:
+    kind: Application
+    name: calculator
+  destination:
+    kind: Deployable
+    name: calculator
