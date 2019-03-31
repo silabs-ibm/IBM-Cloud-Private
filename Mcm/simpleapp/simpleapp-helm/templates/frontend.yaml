@@ -47,7 +47,7 @@ spec:
           name: processor-port
         env:
         - name: OPSERVICEHOST
-          value: "http://svc-compositeop.calc-backend"
+          value: "http://svc-compositeop.mcm-simpleapp"
         - name: OPSERVICEPORT
           value: "8080"          
 ---

@@ -1,15 +1,15 @@
 apiVersion: mcm.ibm.com/v1alpha1
 kind: ApplicationRelationship
 metadata:
-  name: calculator
-  namespace: mcm-calculator
+  name: simpleapp
+  namespace: mcm-simpleapp
   labels:
-    app: calculator
+    app: simpleapp
 spec:
   type: contains
   source:
     kind: Application
-    name: calculator
+    name: simpleapp
   destination:
     kind: Deployable
-    name: calculator
+    name: simpleapp

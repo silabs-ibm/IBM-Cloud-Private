@@ -2,8 +2,8 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 replicaCount: 1
-backendns: calc-backend
-frontendns: calc-frontend
+backendns: mcm-simpleapp
+frontendns: mcm-simpleapp
 
 image:
   add: arunimi/add:v1.0.0

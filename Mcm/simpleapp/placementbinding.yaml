@@ -1,15 +1,15 @@
 apiVersion: mcm.ibm.com/v1alpha1
 kind: PlacementBinding
 metadata:
-  name: calculator
-  namespace: mcm-calculator
+  name: simpleapp
+  namespace: mcm-simpleapp
   labels:
-    app: calculator
+    app: simpleapp
 placementRef:
   apiGroup: mcm.ibm.com
   kind: PlacementPolicy
-  name: calculator
+  name: simpleapp
 subjects:
 - apiGroup: mcm.ibm.com
   kind: Deployable
-  name: calculator
+  name: simpleapp
