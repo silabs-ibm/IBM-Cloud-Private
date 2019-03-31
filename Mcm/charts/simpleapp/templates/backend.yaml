@@ -2,11 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: svc-add
-  namespace: {{ .Values.backendns }}
+  namespace: mcm-simpleapp
   labels:
-    app: add
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Values.releaseName }}     
+    app: add    
 spec:
   ports:
     - port: 8080
@@ -19,13 +17,11 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: add
-  namespace: {{ .Values.backendns }}
+  namespace: mcm-simpleapp
   labels:
-    app: add
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Values.releaseName }}     
+    app: add     
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   selector:
     matchLabels:
       app: add    
@@ -35,9 +31,9 @@ spec:
         app: add         
     spec:
       containers:
-      - image: {{ .Values.image.add }}
+      - image: arunimi/add:v1.0.0
         name: add-container
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
           name: add-port
@@ -46,11 +42,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: svc-subtract
-  namespace: {{ .Values.backendns }}
+  namespace: mcm-simpleapp
   labels:
-    app: subtract
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Values.releaseName }}     
+    app: subtract   
 spec:
   ports:
     - port: 8080
@@ -63,13 +57,11 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: subtract
-  namespace: {{ .Values.backendns }}
+  namespace: mcm-simpleapp
   labels:
-    app: subtract
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Values.releaseName }}     
+    app: subtract    
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   selector:
     matchLabels:
       app: subtract    
@@ -79,9 +71,9 @@ spec:
         app: subtract         
     spec:
       containers:
-      - image: {{ .Values.image.subtract }}
+      - image: arunimi/subtract:v1.0.0
         name: subtract-container
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
           name: subtract-port
@@ -90,11 +82,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: svc-multiply
-  namespace: {{ .Values.backendns }}
+  namespace: mcm-simpleapp
   labels:
-    app: multiply
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Values.releaseName }}     
+    app: multiply     
 spec:
   ports:
     - port: 8080
@@ -107,13 +97,11 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: multiply
-  namespace: {{ .Values.backendns }}
+  namespace: mcm-simpleapp
   labels:
-    app: multiply
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Values.releaseName }}     
+    app: multiply     
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   selector:
     matchLabels:
       app: multiply     
@@ -123,9 +111,9 @@ spec:
         app: multiply         
     spec:
       containers:
-      - image: {{ .Values.image.multiply }}
+      - image: arunimi/multiply:v1.0.0
         name: multiply-container
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
           name: multiply-port
@@ -134,11 +122,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: svc-divide
-  namespace: {{ .Values.backendns }}
+  namespace: mcm-simpleapp
   labels:
-    app: divide
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Values.releaseName }}     
+    app: divide     
 spec:
   ports:
     - port: 8080
@@ -151,13 +137,11 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: divide
-  namespace: {{ .Values.backendns }}
+  namespace: mcm-simpleapp
   labels:
-    app: divide
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Values.releaseName }}    
+    app: divide   
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   selector:
     matchLabels:
       app: divide    
@@ -167,9 +151,9 @@ spec:
         app: divide         
     spec:
       containers:
-      - image: {{ .Values.image.divide }}
+      - image: arunimi/divide:v1.0.0
         name: divide-container
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
           name: divide-port
@@ -178,11 +162,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: svc-compositeop
-  namespace: {{ .Values.backendns }}
+  namespace: mcm-simpleapp
   labels:
-    app: compositeop
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Values.releaseName }}     
+    app: compositeop     
 spec:
   ports:
     - port: 8080
@@ -195,13 +177,11 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: compositeop
-  namespace: {{ .Values.backendns }}
+  namespace: mcm-simpleapp
   labels:
-    app: compositeop
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Values.releaseName }}     
+    app: compositeop    
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   selector:
     matchLabels:
       app: compositeop       
@@ -211,9 +191,9 @@ spec:
         app: compositeop       
     spec:
       containers:
-      - image: {{ .Values.image.compositeop }}
+      - image: arunimi/compositeop:v1.0.0
         name: compositeop-container
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
           name: compoop-port
@@ -233,13 +213,11 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: cmdpod
-  namespace: {{ .Values.backendns }}
+  namespace: mcm-simpleapp
   labels:
-    app: cmdpodbe
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Values.releaseName }}     
+    app: cmdpodbe     
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   selector:
     matchLabels:
       app: cmdpodbe    
