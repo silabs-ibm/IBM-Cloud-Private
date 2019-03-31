@@ -6,8 +6,7 @@ metadata:
   labels:
     app: processor
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}     
+    release: {{ .Values.releaseName }}   
 spec:
   ports:
     - port: 8080
@@ -24,8 +23,7 @@ metadata:
   labels:
     app: processor
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}     
+    release: {{ .Values.releaseName }}      
 spec:
   replicas: {{ .Values.replicaCount }}
   strategy:
@@ -78,8 +76,7 @@ metadata:
   labels:
     app: ui
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}     
+    release: {{ .Values.releaseName }}      
 spec:
   replicas: {{ .Values.replicaCount }}
   strategy:
@@ -112,8 +109,7 @@ metadata:
   labels:
     app: cmdpodfe
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}     
+    release: {{ .Values.releaseName }}      
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:

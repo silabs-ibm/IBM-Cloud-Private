@@ -6,8 +6,7 @@ metadata:
   labels:
     app: add
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}    
+    release: {{ .Values.releaseName }}     
 spec:
   ports:
     - port: 8080
@@ -24,8 +23,7 @@ metadata:
   labels:
     app: add
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}    
+    release: {{ .Values.releaseName }}     
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -52,8 +50,7 @@ metadata:
   labels:
     app: subtract
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}    
+    release: {{ .Values.releaseName }}     
 spec:
   ports:
     - port: 8080
@@ -70,8 +67,7 @@ metadata:
   labels:
     app: subtract
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}    
+    release: {{ .Values.releaseName }}     
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -98,8 +94,7 @@ metadata:
   labels:
     app: multiply
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}    
+    release: {{ .Values.releaseName }}     
 spec:
   ports:
     - port: 8080
@@ -116,8 +111,7 @@ metadata:
   labels:
     app: multiply
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}    
+    release: {{ .Values.releaseName }}     
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -144,8 +138,7 @@ metadata:
   labels:
     app: divide
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}    
+    release: {{ .Values.releaseName }}     
 spec:
   ports:
     - port: 8080
@@ -162,8 +155,7 @@ metadata:
   labels:
     app: divide
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}    
+    release: {{ .Values.releaseName }}    
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -190,8 +182,7 @@ metadata:
   labels:
     app: compositeop
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}    
+    release: {{ .Values.releaseName }}     
 spec:
   ports:
     - port: 8080
@@ -208,8 +199,7 @@ metadata:
   labels:
     app: compositeop
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}    
+    release: {{ .Values.releaseName }}     
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -247,8 +237,7 @@ metadata:
   labels:
     app: cmdpodbe
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}    
+    release: {{ .Values.releaseName }}     
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
