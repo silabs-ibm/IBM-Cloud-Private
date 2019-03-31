@@ -20,6 +20,10 @@
 
 [IDD_Cloud_Track_Session4_Arun.pptx](Presentations/Developer_Day_Bangalore-Mar_2019/IDD_Cloud_Track_Session4_Arun.pptx): Developer day presentation on kubernetes.
 
+- Mcm:
+
+[mcm-nginx](Mcm/nginx): Simple Nginx application deployed in a multi cloud manager environment.
+
 - Probes:
 
 [Java_Spring_http](Probes/Java_Spring_http): HTTP probes for a simple spring java applicaton using builtin actuator package.
