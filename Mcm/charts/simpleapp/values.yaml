@@ -1,0 +1,19 @@
+# Default values for calculator.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+releaseName: simpleapp
+
+replicaCount: 1
+backendns: mcm-simpleapp
+frontendns: mcm-simpleapp
+
+image:
+  add: arunimi/add:v1.0.0
+  subtract: arunimi/subtract:v1.0.0
+  multiply: arunimi/multiply:v1.0.0
+  divide: arunimi/divide:v1.0.0
+  compositeop: arunimi/compositeop:v1.0.0
+  processor: arunimi/processor:v1.0.0
+  ui: arunimi/ui:v1.0.0
+  pullPolicy: Always        
