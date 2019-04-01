@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: add
-  namespace: mcm-simpleapp
+  namespace: simpleapp
   labels:
     app: add     
 spec:
@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
       - image: arunimi/add:v1.0.0
-        name: add-container
+        name: addcontainer
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-          name: add-port
+          name: addport
