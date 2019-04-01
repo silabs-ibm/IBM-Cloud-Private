@@ -10,4 +10,4 @@ spec:
     kind: helm
     helm:
       chartURL: https://github.com/abalasu1/IBM-Cloud-Private/raw/master/Mcm/charts/simpleapp.tgz
-      namespace: mcm-simpleapp
+      namespace: simpleapp
