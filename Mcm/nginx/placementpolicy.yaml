@@ -2,7 +2,7 @@ apiVersion: mcm.ibm.com/v1alpha1
 kind: PlacementPolicy
 metadata:
   name: nginx
-  namespace: mcm-nginx
+  namespace: nginx
   labels:
     app: nginx
 spec:

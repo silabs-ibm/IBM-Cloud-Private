@@ -2,7 +2,7 @@ apiVersion: mcm.ibm.com/v1alpha1
 kind: Deployable
 metadata:
   name: nginx
-  namespace: mcm-nginx
+  namespace: nginx
   labels:
     app: nginx
 spec:
@@ -10,4 +10,4 @@ spec:
     kind: helm
     helm:
       chartURL: https://github.com/IBM/charts/raw/master/repo/stable/ibm-nginx-dev-1.0.1.tgz
-      namespace: default
+      namespace: nginx

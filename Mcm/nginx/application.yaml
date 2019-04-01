@@ -2,7 +2,7 @@ apiVersion: app.k8s.io/v1beta1
 kind: Application
 metadata:
   name: nginx
-  namespace: mcm-nginx
+  namespace: nginx
   labels:
     app: nginx
 spec:
