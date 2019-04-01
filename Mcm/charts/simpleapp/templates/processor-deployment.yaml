@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: api-processor
+  namespace: mcm-simpleapp
+  labels:
+    app: processor     
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: processor    
+  template:
+    metadata:
+      labels:
+        app: processor         
+    spec:
+      containers:
+      - image: arunimi/processor:v1.0.0
+        name: processor-container
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+          name: processor-port
+        env:
+        - name: OPSERVICEHOST
+          value: "http://svc-compositeop.mcm-simpleapp"
+        - name: OPSERVICEPORT
+          value: "8080"

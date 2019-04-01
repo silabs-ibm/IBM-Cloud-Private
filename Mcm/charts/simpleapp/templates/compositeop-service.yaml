@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-compositeop
+  namespace: mcm-simpleapp
+  labels:
+    app: compositeop     
+spec:
+  ports:
+    - port: 8080
+      targetPort: 80
+      name: http
+  selector:
+    app: compositeop

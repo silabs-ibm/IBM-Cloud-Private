@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cmdpod
+  namespace: mcm-simpleapp
+  labels:
+    app: cmdpod    
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cmdpod    
+  template:
+    metadata:
+      labels:
+        app: cmdpod         
+    spec:
+      containers:
+      - image: tutum/curl
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "while true; do sleep 30; done;" ]      
+        name: cmdpod-container
+        imagePullPolicy: Always
