@@ -4,7 +4,7 @@ metadata:
   name: svc-subtract
   namespace: simpleapp
   labels:
-    app: subtract   
+    app: subtract
 spec:
   ports:
     - port: 8080

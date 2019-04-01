@@ -4,7 +4,7 @@ metadata:
   name: ui
   namespace: simpleapp
   labels:
-    app: ui    
+    app: ui
 spec:
   type: LoadBalancer
   ports:

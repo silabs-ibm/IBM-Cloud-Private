@@ -4,7 +4,7 @@ metadata:
   name: divide
   namespace: simpleapp
   labels:
-    app: divide   
+    app: divide
 spec:
   replicas: 1
   selector:
