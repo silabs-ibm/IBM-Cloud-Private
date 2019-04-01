@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: ui
-  namespace: mcm-simpleapp  
+  namespace: simpleapp  
   labels:
     app: ui      
 spec:
@@ -18,7 +18,7 @@ spec:
         app: ui       
     spec:
       containers:
-      - name: ui-container
+      - name: uicontainer
         image: arunimi/ui:v1.0.0
         imagePullPolicy: Always  
         resources:
@@ -27,4 +27,4 @@ spec:
             memory: 100Mi
         ports:
         - containerPort: 80
-          name: http-server
+          name: httpserver

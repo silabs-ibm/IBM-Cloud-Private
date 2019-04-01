@@ -4,21 +4,21 @@ metadata:
   name: add
   namespace: simpleapp
   labels:
-    app: add     
+    app: add
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: add    
+ app: add
   template:
     metadata:
-      labels:
-        app: add         
+ labels:
+   app: add
     spec:
-      containers:
-      - image: arunimi/add:v1.0.0
-        name: addcontainer
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80
-          name: addport
+ containers:
+ - image: arunimi/add:v1.0.0
+   name: addcontainer
+   imagePullPolicy: Always
+   ports:
+   - containerPort: 80
+name: addport

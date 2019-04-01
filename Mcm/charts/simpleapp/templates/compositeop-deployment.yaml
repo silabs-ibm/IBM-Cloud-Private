@@ -2,34 +2,34 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: compositeop
-  namespace: mcm-simpleapp
+  namespace: simpleapp
   labels:
-    app: compositeop    
+    app: compositeop
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: compositeop       
+      app: compositeop
   template:
     metadata:
       labels:
-        app: compositeop       
+        app: compositeop
     spec:
       containers:
       - image: arunimi/compositeop:v1.0.0
-        name: compositeop-container
+        name: compositeopcontainer
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-          name: compoop-port
+          name: compoopport
         env:
         - name: VERSION
-          value: "v1.0.0"        
+          value: "v1.0.0"
         - name: ADDURI
-          value: "http://svc-add.mcm-simpleapp:8080/basicop/add"
+          value: "http://svcadd.simpleapp:8080/basicop/add"
         - name: SUBURI
-          value: "http://svc-subtract.mcm-simpleapp:8080/basicop/subtract"
+          value: "http://svcsubtract.simpleapp:8080/basicop/subtract"
         - name: MULURI
-          value: "http://svc-multiply.mcm-simpleapp:8080/basicop/multiply"
+          value: "http://svcmultiply.simpleapp:8080/basicop/multiply"
         - name: DIVURI
-          value: "http://svc-divide.mcm-simpleapp:8080/basicop/divide"
+          value: "http://svcdivide.simpleapp:8080/basicop/divide"

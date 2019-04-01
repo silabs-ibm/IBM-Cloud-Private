@@ -2,23 +2,23 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: subtract
-  namespace: mcm-simpleapp
+  namespace: simpleapp
   labels:
-    app: subtract    
+    app: subtract
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: subtract    
+      app: subtract
   template:
     metadata:
       labels:
-        app: subtract         
+        app: subtract
     spec:
       containers:
       - image: arunimi/subtract:v1.0.0
-        name: subtract-container
+        name: subtractcontainer
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-          name: subtract-port
+          name: subtractport

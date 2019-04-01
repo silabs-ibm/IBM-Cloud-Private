@@ -4,7 +4,7 @@ metadata:
   name: svcadd
   namespace: simpleapp
   labels:
-    app: add    
+    app: add
 spec:
   ports:
     - port: 8080

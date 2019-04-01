@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: svc-subtract
-  namespace: mcm-simpleapp
+  namespace: simpleapp
   labels:
     app: subtract   
 spec:

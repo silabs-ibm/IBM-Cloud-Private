@@ -2,23 +2,23 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: multiply
-  namespace: mcm-simpleapp
+  namespace: simpleapp
   labels:
-    app: multiply     
+    app: multiply
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: multiply     
+      app: multiply
   template:
     metadata:
       labels:
-        app: multiply         
+        app: multiply
     spec:
       containers:
       - image: arunimi/multiply:v1.0.0
-        name: multiply-container
+        name: multiplycontainer
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-          name: multiply-port
+          name: multiplyport

@@ -2,23 +2,23 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: divide
-  namespace: mcm-simpleapp
+  namespace: simpleapp
   labels:
     app: divide   
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: divide    
+      app: divide
   template:
     metadata:
       labels:
-        app: divide         
+        app: divide
     spec:
       containers:
       - image: arunimi/divide:v1.0.0
-        name: divide-container
+        name: dividecontainer
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-          name: divide-port
+          name: divideport

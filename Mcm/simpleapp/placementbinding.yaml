@@ -2,7 +2,7 @@ apiVersion: mcm.ibm.com/v1alpha1
 kind: PlacementBinding
 metadata:
   name: simpleapp
-  namespace: mcm-simpleapp
+  namespace: simpleapp
   labels:
     app: simpleapp
 placementRef:

@@ -2,7 +2,7 @@ apiVersion: mcm.ibm.com/v1alpha1
 kind: PlacementPolicy
 metadata:
   name: simpleapp
-  namespace: mcm-simpleapp
+  namespace: simpleapp
   labels:
     app: simpleapp
 spec:
