@@ -9,5 +9,5 @@ spec:
   deployer:
     kind: helm
     helm:
-      chartURL: https://github.com/abalasu1/IBM-Cloud-Private/raw/master/Mcm/charts/multiserviceapp.tgz
+      chartURL: https://github.com/abalasu1/IBM-Cloud-Private/raw/master/Mcm/charts/multiservicesapp.tgz
       namespace: multiserviceapp
