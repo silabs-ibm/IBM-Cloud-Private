@@ -1,14 +1,14 @@
 apiVersion: app.k8s.io/v1beta1
 kind: Application
 metadata:
-  name: multiserviceapp
-  namespace: multiserviceapp
+  name: multiservicesapp
+  namespace: multiservicesapp
   labels:
-    app: multiserviceapp
+    app: multiservicesapp
 spec:
   selector:
     matchLabels:
-      app: multiserviceapp
+      app: multiservicesapp
   componentKinds:
   - group: core
     kind: Service

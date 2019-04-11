@@ -1,15 +1,15 @@
 apiVersion: mcm.ibm.com/v1alpha1
 kind: ApplicationRelationship
 metadata:
-  name: multiserviceapp
-  namespace: multiserviceapp
+  name: multiservicesapp
+  namespace: multiservicesapp
   labels:
-    app: multiserviceapp
+    app: multiservicesapp
 spec:
   type: contains
   source:
     kind: Application
-    name: multiserviceapp
+    name: multiservicesapp
   destination:
     kind: Deployable
-    name: multiserviceapp
+    name: multiservicesapp

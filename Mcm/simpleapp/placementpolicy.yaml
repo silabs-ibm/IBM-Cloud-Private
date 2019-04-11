@@ -7,8 +7,8 @@ metadata:
     app: simpleapp
 spec:
   clusterReplicas: 1
-  clusterSelector:
+  clusterLabels:
     matchLabels:
-      region: EU
+      region: US
   resourceHint:
     type: cpu

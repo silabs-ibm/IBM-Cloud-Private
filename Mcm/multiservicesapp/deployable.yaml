@@ -1,13 +1,13 @@
 apiVersion: mcm.ibm.com/v1alpha1
 kind: Deployable
 metadata:
-  name: multiserviceapp
-  namespace: multiserviceapp
+  name: multiservicesapp
+  namespace: multiservicesapp
   labels:
-    app: multiserviceapp
+    app: multiservicesapp
 spec:
   deployer:
     kind: helm
     helm:
       chartURL: https://github.com/abalasu1/IBM-Cloud-Private/raw/master/Mcm/charts/multiservicesapp.tgz
-      namespace: multiserviceapp
+      namespace: multiservicesapp

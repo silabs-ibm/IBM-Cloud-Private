@@ -1,10 +1,10 @@
 apiVersion: mcm.ibm.com/v1alpha1
 kind: PlacementPolicy
 metadata:
-  name: simpleapp
-  namespace: simpleapp
+  name: multiservicesapp
+  namespace: multiservicesapp
   labels:
-    app: simpleapp
+    app: multiservicesapp
 spec:
   clusterReplicas: 1
   clusterSelector:
