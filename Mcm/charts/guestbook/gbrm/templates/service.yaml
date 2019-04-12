@@ -17,4 +17,3 @@ spec:
     release: {{ .Release.Name }}
     role: master
     tier: backend
-    
