@@ -1,0 +1,12 @@
+replicaCount: 1
+
+appInClusterNamespace: gbapp
+
+targetCluster:
+  labelSelector:
+    matchLabels:
+      environment: Prod
+      datacenter: hursley
+  resourceSelector:
+    type: cpu
+  compliances: ""
