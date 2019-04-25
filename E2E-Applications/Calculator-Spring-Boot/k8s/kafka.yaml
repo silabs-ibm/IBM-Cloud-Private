@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
   name: kafka-broker0
-  namespace: calcspringboot
+  namespace: calculator
 spec:
   template:
     metadata:
@@ -31,7 +31,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: kafka-service
-  namespace: calcspringboot
+  namespace: calculator
   labels:
     name: kafka
 spec:
@@ -48,7 +48,7 @@ kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
   name: zookeeper-deployment-1
-  namespace: calcspringboot
+  namespace: calculator
 spec:
   template:
     metadata:
@@ -70,7 +70,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: zoo1
-  namespace: calcspringboot
+  namespace: calculator
   labels:
     app: zookeeper-1
 spec:

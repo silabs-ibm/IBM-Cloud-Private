@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: basic-op-subtract
-  namespace: calcspringboot
+  namespace: calculator
   labels:
     app: basic-op-subtract
 spec:
@@ -45,7 +45,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: basic-op-subtract
-  namespace: calcspringboot
+  namespace: calculator
   labels:
     app: basic-op-subtract
   annotations:

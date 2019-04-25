@@ -1,4 +1,4 @@
-PROXY=http://calcspringboot.io
+PROXY=http://calculator.io
 
 test-add:
 	-bash -c './add.sh $(PROXY)'	

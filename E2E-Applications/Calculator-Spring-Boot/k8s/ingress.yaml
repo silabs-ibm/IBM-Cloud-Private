@@ -1,11 +1,11 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: calcspringbootingress
-  namespace: calcspringboot
+  name: calculatoringress
+  namespace: calculator
 spec:
   rules:
-  - host: calcspringboot.io
+  - host: calculator.io
     http:
       paths:
       - path: /

@@ -40,4 +40,4 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     service-url:
-      defaultZone: ${EUREKA_URI:http://discovery:8101/eureka}     
+      defaultZone: ${EUREKA_URI:http://discovery:8101/eureka} 

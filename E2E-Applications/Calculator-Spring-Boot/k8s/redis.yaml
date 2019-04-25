@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: calcspringboot
+  namespace: calculator
   name: redis
   labels:
     app: redis
@@ -18,7 +18,7 @@ apiVersion: v1
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  namespace: calcspringboot
+  namespace: calculator
   name: redis
   labels:
     app: redis
