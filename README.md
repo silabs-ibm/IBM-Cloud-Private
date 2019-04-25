@@ -44,6 +44,8 @@
 
 [Headless](Services/Headless): Headless Service with selectors and no selectors.
 
+[Haproxy](Services/Haproxy): Set up haproxy as the load balancer for applicaions.
+
 - Security:
 
 [Network_Policies](Security/Network_Policies): Secure microservices deployed on kubernetes using network policies.
