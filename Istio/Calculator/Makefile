@@ -1,8 +1,8 @@
 PROJECT=calculator
-DOCKERREPOSITORY=uscluster.icp:8500
+DOCKERREPOSITORY=eucluster.icp:8500
 DOCKERREPOSITORYREMOTE=eucluster.icp:8500
 
-PROXYNODE=9.30.123.128
+PROXYNODE=9.20.194.143
 PROXY=http://$(PROXYNODE):$(shell kubectl get svc istio-ingressgateway -n istio-system -o json | jq .spec.ports[0].nodePort)
 UIPROXY=http://$(PROXYNODE):$(shell kubectl get svc istio-ingressgateway -n istio-system -o json | jq .spec.ports[0].nodePort)
 

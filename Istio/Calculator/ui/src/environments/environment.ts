@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  processorUrl: 'http://9.30.123.128:31380/processor/calculate?verbosity=1',
+  processorUrl: 'http://9.20.194.143:31380/processor/calculate?verbosity=1',
 };
